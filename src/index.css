@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Safe area support for iPhone notch / home indicator */
+@layer base {
+  :root {
+    --tg-theme-bg-color: #111827;
+    --tg-theme-text-color: #ffffff;
+    --tg-theme-hint-color: #6b7280;
+    --tg-theme-link-color: #38bdf8;
+    --tg-theme-button-color: #0284c7;
+    --tg-theme-button-text-color: #ffffff;
+    --tg-theme-secondary-bg-color: #1f2937;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+    background-color: #030712;
+  }
+
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #030712;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    height: 100%;
+  }
+
+  /* Remove scrollbar but keep scrolling */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  * {
+    scrollbar-width: none;
+  }
+}
+
+@layer utilities {
+  /* Safe area padding for bottom navigation */
+  .pb-safe {
+    padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+  }
+
+  .pt-safe {
+    padding-top: max(0.5rem, env(safe-area-inset-top));
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

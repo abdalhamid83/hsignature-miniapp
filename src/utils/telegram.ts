@@ -93,7 +93,12 @@ export function getTelegramWebApp(): TelegramWebApp | null {
  */
 export function isInsideTelegram(): boolean {
   const tg = getTelegramWebApp()
-  return !!tg && !!tg.initData && tg.initData.length > 0
+
+console.log('TG OBJECT', tg)
+console.log('TG INITDATA', tg?.initData)
+console.log('TG USER', tg?.initDataUnsafe?.user)
+
+return !!tg
 }
 
 /**

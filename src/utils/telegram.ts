@@ -95,8 +95,10 @@ export function isInsideTelegram(): boolean {
   const tg = getTelegramWebApp()
 
 console.log('TG OBJECT', tg)
-console.log('TG INITDATA', tg?.initData)
-console.log('TG USER', tg?.initDataUnsafe?.user)
+console.log('TG INITDATA VALUE', tg?.initData)
+console.log('TG INITDATA UNSAFE', tg?.initDataUnsafe)
+console.log('TG PLATFORM', tg?.platform)
+console.log('TG VERSION', tg?.version)
 
 return !!tg
 }

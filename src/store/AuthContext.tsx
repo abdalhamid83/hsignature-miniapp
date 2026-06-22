@@ -34,7 +34,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isDark, setIsDark] = useState(true)
 
   const authenticate = useCallback(async () => {
-    console.log('AUTH STARTED')
+    console.log('STEP 1')
+
+initTelegramApp()
+
+console.log('STEP 2')
+
+applyTelegramTheme()
+
+console.log('STEP 3')
+
+setIsDark(getColorScheme() === 'dark')
+
+console.log('STEP 4')
+
+if (!isInsideTelegram()) {
+  console.log('STEP NOT TELEGRAM')
+  setState({ status: 'not-telegram', humanId: null, error: null })
+  return
+}
+
+console.log('STEP INSIDE TELEGRAM')
     // 1. Init Telegram SDK
     initTelegramApp()
     applyTelegramTheme()

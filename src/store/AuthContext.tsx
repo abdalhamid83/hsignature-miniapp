@@ -34,6 +34,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isDark, setIsDark] = useState(true)
 
   const authenticate = useCallback(async () => {
+    console.log('AUTH STARTED')
     // 1. Init Telegram SDK
     initTelegramApp()
     applyTelegramTheme()

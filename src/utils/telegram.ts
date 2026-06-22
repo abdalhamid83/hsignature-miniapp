@@ -82,7 +82,12 @@ interface TelegramWebApp {
  */
 export function getTelegramWebApp(): TelegramWebApp | null {
   if (typeof window !== 'undefined' && window.Telegram?.WebApp) {
-    return window.Telegram.WebApp
+    const tg = window.Telegram.WebApp
+
+console.log('RAW INITDATA', tg.initData)
+console.log('RAW UNSAFE', tg.initDataUnsafe)
+
+return tg
   }
   return null
 }
